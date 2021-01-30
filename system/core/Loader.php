@@ -105,7 +105,7 @@ class CI_Loader {
 	 *
 	 * @var	array
 	 */
-	protected $_ci_models =	array();
+	protected $_ci_models =	array('ranking_model');
 
 	/**
 	 * List of loaded helpers
