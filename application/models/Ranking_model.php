@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class ranking_model extends CI_Model {
+class Ranking_model extends CI_Model {
 	
 	public $id;
 	public $nombre;
@@ -12,7 +12,7 @@ class ranking_model extends CI_Model {
 		$this->db->where(array('id' => $id, 'activo' => 1));
 		$query = $this->db->get('ranking');
 
-		$fila = $query->custom_row_object(0, 'ranking_model');
+		$fila = $query->custom_row_object(0, 'Ranking_model');
 
 		if (isset($fila)) {
 			$fila->id = intval($fila->id);
@@ -25,7 +25,7 @@ class ranking_model extends CI_Model {
 
 	public function limpiar_datos($data_sucia) {
 		foreach ($data_sucia as $nombre_campo => $valor) {
-			if (property_exists('ranking_model', $nombre_campo)) {
+			if (property_exists('Ranking_model', $nombre_campo)) {
 				$this->$nombre_campo = $valor;
 			}
 		}
