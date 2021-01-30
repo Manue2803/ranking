@@ -10,7 +10,7 @@ class Rankingp extends REST_Controller
     {
         parent::__construct();
         $this->load->database();
-        $this->load->model('ranking_model');
+        $this->load->model('Ranking_model');
     }
 
     public function ranking_put()
@@ -23,7 +23,7 @@ class Rankingp extends REST_Controller
 
         if ($this->form_validation->run()) {
 
-            $ranking = $this->ranking_model->limpiar_datos($data);
+            $ranking = $this->Ranking_model->limpiar_datos($data);
 
             if ($this->db->insert('ranking', $data)) {
                 $respuesta = array(
