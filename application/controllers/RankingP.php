@@ -31,7 +31,7 @@ class Rankingp extends REST_Controller
                     'mensaje' => 'Registro insertado correctamente',
                     'ranking_id' => $this->db->insert_id(),
                 );
-                $this->response($respuesta, REST_Controller::HTTP_INTERNAL_SERVER_ERROR);
+                $this->response($respuesta);
             } else {
                 $respuesta = array(
                     'err' => TRUE,
